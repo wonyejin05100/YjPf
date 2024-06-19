@@ -1,0 +1,665 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.blind {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -9999999999;
+    text-indent: -99999999999999px;
+    font-size: 0;
+}
+
+#wrap {
+    width: 100%;
+}
+
+/* header */
+#wrap header {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    border-bottom: 1px solid #e6e6e6;
+    box-sizing: border-box;
+}
+
+#wrap header .header_main {
+    width: 100%;
+    max-width: 1400px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+#wrap header .header_main h1.logo a span.pf {
+    font-family: "Montserrat", sans-serif;
+    color: #000;
+    padding-left: 20px;
+}
+
+/* menu */
+#wrap header .header_main nav ul {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    width: 450px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#wrap header .header_main nav ul li {
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+}
+
+#wrap header .header_main nav ul li.active {
+    color: #EE4266;
+}
+
+/* profile */
+section#profile {
+    width: 100%;
+    padding-top: 100px;
+}
+
+/* section#profile .profile_main {
+    width: 1250px;
+    margin: 40px auto;
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+} */
+
+section#profile .profile_main {
+    width: 100%;
+    max-width: 1100px;
+    height: 500px;
+    margin: 40px auto;
+    /* display: flex;
+    justify-content: center;
+    gap: 12%; */
+    padding: 70px 20px;
+    position: relative;
+}
+
+section#profile .profile_main .p_left {
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+section#profile .profile_main .p_left a img {
+    max-width: 100%;
+}
+
+/* section#profile .profile_main .p_left .img {
+    background: url(../images/profile_img.png)no-repeat;
+    width: 420px;
+    height: 420px;
+} */
+
+/* section#profile .profile_main .p_right {
+    width: 585px;
+    height: 420px;
+    position: relative;
+} */
+
+section#profile .profile_main .p_right {
+    /* width: 585px; */
+    width: 52%;
+    height: 420px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section#profile .profile_main .p_right .typing-txt {
+    display: none;
+}
+
+section#profile .profile_main .p_right .typing ul {
+    padding-top: 80px;
+}
+
+section#profile .profile_main .p_right .typing ul li {
+    display: block;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+section#profile .profile_main .p_right .typing ul li.on {
+    display: inline-block;
+    animation-name: cursor;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+}
+
+section#profile .profile_main .p_right p {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+section#profile .profile_main .p_right p span {
+    color: #EE4266;
+    font-weight: 500;
+}
+
+/* 모든 section의 타이틀 */
+section h2 {
+    font-size: 60px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    padding-top: 200px;
+}
+
+/* about */
+section#about {
+    width: 100%;
+    height: 1080px;
+}
+
+section#about .about_main {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+section#about .about_main .a_left {
+    margin-top: 85px;
+}
+
+section#about .about_main .a_left .about_img {
+    background: url(../images/about_img.jpg)no-repeat;
+    background-size: cover;
+    width: 290px;
+    height: 380px;
+    border-radius: 50%;
+}
+
+section#about .about_main .a_left .about_text {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+section#about .about_main .a_left dl {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+section#about .about_main .a_left dl.title {
+    font-weight: 500;
+}
+
+section#about .about_main .a_right {
+    margin-top: 85px;
+}
+
+section#about .about_main .a_right dl {
+    margin-bottom: 30px;
+}
+
+section#about .about_main .a_right dl dt {
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+section#about .about_main .a_right dl dd {
+    line-height: 1.8;
+}
+
+section#about .about_main .a_right dl dd.tools_img {
+    background: url(../images/tools_img.png) no-repeat;
+    display: block;
+    width: 381px;
+    height: 37px;
+    margin-top: 15px;
+}
+
+section#about .about_main .a_right dl dd.skills_img {
+    background: url(../images/skills_img.png) no-repeat;
+    display: block;
+    width: 129px;
+    height: 37px;
+    margin-top: 15px;
+}
+
+/* portfolio */
+section#portfolio {
+    width: 100%;
+    height: 900px;
+    background: url(../images/portfolio_bg.jpg);
+    background-size: cover;
+}
+
+section#portfolio h2 {
+    padding-top: 150px;
+}
+
+section#portfolio .portfolio_main {
+    /* width: 1250px; */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.portfolio_main .inner {
+    /* min-width: 900px; */
+    width: 900px;
+    /* width: 100%; */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.inner_bbs {
+    width: 100%;
+}
+
+/* tab menu */
+.inner_bbs .tab_btn ul {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.inner_bbs .tab_btn ul li {
+    display: inline-block;
+    font-size: 22px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.inner_bbs .tab_btn ul li.active {
+    color: #EE4266;
+    font-weight: bold;
+}
+
+.inner_bbs .tabs {
+    padding-top: 50px;
+}
+
+.inner_bbs .tab {
+    display: none;
+}
+
+.inner_bbs .tab.active {
+    display: block;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inner_bbs .item {
+    width: 1250px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.inner_item {
+    padding-top: 20px;
+    width: 900px;
+    margin: 0 auto;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    gap: 110px;
+}
+
+.inner_item .portImg1 {
+    background: url(../images/pf_w01.png)no-repeat;
+    width: 420px;
+    height: 330px;
+    background-size: contain;
+    margin-top: 20px;
+}
+
+.inner_item .portImg2 {
+    background: url(../images/pf_w02.png)no-repeat;
+    width: 420px;
+    height: 330px;
+    background-size: contain;
+    margin-top: 20px;
+}
+
+.inner_item .portImg3 {
+    background: url(../images/pf_w03.png)no-repeat;
+    width: 410px;
+    height: 390px;
+    background-size: contain;
+    margin-top: 20px;
+}
+
+.inner_item .portImg4 {
+    background: url(../images/pf_w04.png)no-repeat;
+    width: 440px;
+    height: 300px;
+    background-size: contain;
+    margin-top: 20px;
+}
+
+.inner_item .portImg5 {
+    background: url(../images/pf_w05.png)no-repeat;
+    width: 420px;
+    height: 330px;
+    background-size: contain;
+    margin-top: 20px;
+}
+
+.inner_item .portImg6 {
+    background: url(../images/pf_w06.png)no-repeat;
+    width: 420px;
+    height: 330px;
+    background-size: contain;
+    margin-top: 20px;
+}
+
+.inner_item .portImg7 {
+    background: url(../images/pf_r01.png)no-repeat;
+    width: 420px;
+    height: 350px;
+    background-size: contain;
+    margin-top: 10px;
+}
+
+.inner_item .portImg8 {
+    background: url(../images/pf_r02.png)no-repeat;
+    width: 420px;
+    height: 350px;
+    background-size: contain;
+    margin-top: 20px;
+}
+
+.inner_item .portImg9 {
+    background: url(../images/pf_r03.png)no-repeat;
+    width: 440px;
+    height: 230px;
+    background-size: contain;
+    margin: 50px 0 0 30px;
+}
+
+.inner_item .portImg10 {
+    background: url(../images/pf_r04.png)no-repeat;
+    width: 420px;
+    height: 330px;
+    background-size: contain;
+    margin: 20px 0 0 20px;
+}
+
+.inner_item .portImg11 {
+    background: url(../images/pf_u01.png)no-repeat;
+    width: 390px;
+    background-size: contain;
+    margin-top: -10px;
+}
+
+.inner_item .portText {
+    margin-top: 20px;
+}
+
+.inner_item .portText h3 {
+    font-size: 45px;
+    margin-bottom: 40px;
+}
+
+.inner_item .portText p {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.inner_item .portText p span {
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+.inner_item .portText p.explain {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 25px 0 35px 0;
+}
+
+.inner_item .portText .shortcut {
+    display: flex;
+    gap: 15px;
+}
+
+.inner_item .portText p.view a,
+.inner_item .portText p.figma a {
+    display: block;
+    color: #000;
+    width: 135px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 20px;
+    background-color: #fff;
+    text-align: center;
+    transition: .5s;
+}
+
+.inner_item .portText p.view a:hover,
+.inner_item .portText p.figma a:hover {
+    background-color: #EE4266;
+    color: #fff;
+}
+
+.portfolio_main .inner .inner_bbs .slick-dots li button:before {
+    color: #999;
+}
+
+.portfolio_main .inner .inner_bbs .slick-dots li.slick-active button:before {
+    color: #EE4266;
+}
+
+/* contact */
+section#contact .contact_main {
+    width: 1250px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 70px;
+}
+
+section#contact h2 {
+    padding-top: 150px;
+}
+
+section#contact .contact_main .c_left .c_img {
+    background: url(../images/contact_img.png)no-repeat;
+    width: 300px;
+    height: 300px;
+    background-size: contain;
+}
+
+section#contact .contact_main .c_right {
+    margin-top: 25px;
+}
+
+section#contact .contact_main .c_right p.c_title {
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+section#contact .contact_main .c_right p.c_text {
+    font-size: 17px;
+    color: #333;
+}
+
+section#contact .contact_main .c_right p.icon {
+    color: #666;
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+section#contact .contact_main .c_right p.icon i {
+    padding-right: 7px;
+    margin-bottom: 5px;
+}
+
+/* footer */
+#wrap footer {
+    width: 100%;
+    height: 70px;
+}
+
+#wrap footer .footer_main {
+    width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#wrap footer .footer_main .copyright p {
+    text-align: center;
+}
+
+/* 하단화살표 */
+.btn_top {
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+    display: none;
+}
+
+.btn_top img {
+    border-radius: 0 15px 15px 15px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 반응형 */
+@media (max-width:1250px) {
+
+    .header_main nav {
+        display: none;
+    }
+
+    section#profile .profile_main .p_left a img {
+        /* max-width: 80%; */
+    }
+
+    section#profile .profile_main .p_right {
+        /* white-space: nowrap; */
+    }
+
+    section#profile .profile_main .p_right .typing ul li {
+        /* font-size: 40px; */
+    }
+}
+
+@media (max-width:925px) {
+
+    section#profile .profile_main {
+        margin-top: 0;
+        padding: 0 10px 60px 10px;
+    }
+
+    section#profile .profile_main .p_left {
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+    }
+
+    section#profile .profile_main .p_right {
+        width: 88%;
+        /* left: 20px; */
+        left: 50%;
+        transform: translateX(-50%);
+        /* top: 645px; */
+        top: 270px;
+    }
+
+    section#profile .profile_main .p_right .typing ul li {
+        font-size: 40px;
+    }
+
+    section#profile .profile_main .p_right p {
+        top: 220px;
+        font-size: 16px;
+    }
+
+    section#about .about_main {
+        display: block;
+    }
+
+    section#about .about_main .a_left .about_img {
+        margin: 0 auto;
+    }
+
+    section#about .about_main .a_right {
+        text-align: center;
+        margin-top: 55px;
+    }
+        
+    section#about .about_main .a_right dl dd.tools_img {
+        margin: 15px auto 0 auto;
+    }
+
+    section#about .about_main .a_right dl dd.skills_img {
+        margin: 15px auto 0 auto;
+    }
+
+    /* portfolio */
+    section#portfolio {
+        margin-top: 450px;
+    }
+
+    section#portfolio .portfolio_main {
+        width: 95%;
+    }
+    
+    .portfolio_main .inner {
+        width: 500px;
+        /* width: 60%; */
+    }
+    
+    .inner_bbs .tab_btn ul li {
+        font-size: 18px;
+    }
+}
